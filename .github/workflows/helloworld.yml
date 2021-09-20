@@ -9,24 +9,24 @@ on:
 
 # https://docs.github.com/ja/actions/reference/workflow-syntax-for-github-actions#env
 env:
-  PRINT_STRING: test
-
-# https://docs.github.com/ja/actions/reference/workflow-syntax-for-github-actions#defaults
-defaults:
-  run:
-    runs-on: ubuntu-latest
+  PRINT_STRING: global-test
 
 # https://docs.github.com/ja/actions/reference/workflow-syntax-for-github-actions#jobs
 jobs:
   # job name
   hello1:
+    runs-on: ubuntu-latest
+    env:
+      PRINT_STRING: test
     steps:
       - run: echo "Hello World 1!"
       - run: echo $PRINT_STRING
   hello2:
+    runs-on: ubuntu-latest
     steps:
       - run: echo "Hello World 2!"
   hello3:
+    runs-on: ubuntu-latest
     needs: [hello1, hello2]
     steps:
       - run: echo "Hello World 3!"
