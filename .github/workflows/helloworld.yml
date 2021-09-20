@@ -1,9 +1,13 @@
+# workflow name
 name: Hello World
 
+# Execution timing
 on:
+  # Manual execution
   workflow_dispatch:
 
 jobs:
+  # job name
   hello:
     runs-on: ubuntu-latest
     steps:
