@@ -5,7 +5,7 @@ on:
 
 defaults:
   run:
-    working-directory: ./terraform
+    working-directory: terraform
 
 jobs:
   main:
@@ -21,7 +21,6 @@ jobs:
         continue-on-error: true
 
       - name: Terraform Init
-        working-directory: ./terraform
         id: init
         run: terraform init
 
