@@ -12,3 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello World!"
+  hello2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello World 2!"
