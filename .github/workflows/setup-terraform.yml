@@ -18,19 +18,23 @@ jobs:
           terraform_version: 1.0.5
 
       - name: Terraform fmt
-        run: pwd
-        run: terraform fmt -check
+        run: |
+          pwd
+          terraform fmt -check
         continue-on-error: true
 
       - name: Terraform Init
-        run: pwd
-        run: terraform init
+        run: |
+          pwd
+          terraform init
 
       - name: Terraform Validate
-        run: pwd
-        run: terraform validate -no-color
+        run: |
+          pwd
+          terraform validate -no-color
 
       - name: Terraform Plan
-        run: pwd
-        run: terraform plan -no-color
+        run: |
+          pwd
+          terraform plan -no-color
         continue-on-error: true
