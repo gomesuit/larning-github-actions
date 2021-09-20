@@ -2,9 +2,14 @@
 name: Hello World
 
 # Execution timing
+# https://docs.github.com/ja/actions/reference/workflow-syntax-for-github-actions#on
 on:
   # Manual execution
   workflow_dispatch:
+
+# https://docs.github.com/ja/actions/reference/workflow-syntax-for-github-actions#env
+env:
+  PRINT_STRING: test
 
 jobs:
   # job name
@@ -12,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello World!"
+      - run: echo $PRINT_STRING
   hello2:
     runs-on: ubuntu-latest
     steps:
